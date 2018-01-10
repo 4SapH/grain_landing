@@ -1,0 +1,297 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
+
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: .1rem;
+}
+
+html, body {
+  min-height: 100vh;
+  height: 100vh;
+}
+
+
+
+.clearfix::after,{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* Typography */
+
+
+
+/* Buttons */
+
+.btn {
+  background-color: #FFA300;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: ease-in-out 250ms;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #FFBD29;
+  /* color: #2600C8; */
+  color: #333;
+}
+
+
+/* CONTAINER */
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background: url(../img/main-bg2.jpeg);
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+
+.container-clicked {
+  background: #FFA300;
+}
+
+.container::before {
+  display: block;
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(240,240,240,0.7);
+  z-index: -1;
+}
+
+.container-clicked::before {
+  display: none;
+}
+
+/* CARD */
+
+.card {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 1.2rem;
+  box-shadow: 0 0 2rem .5rem rgba(0,0,0,0.2);
+}
+
+/* header */
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card header .logo h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.card header .nav-toggle {
+  color: #FFA300;
+  font-size: 1.5rem;
+  top: 2rem;
+  right: 30%;
+  transform: translateX(50%);
+  cursor: pointer;
+  display: none;
+}
+
+.card header .nav-toggle:hover {
+  color: #FFBD29;
+}
+
+.card header .nav {
+  display: block;
+}
+
+.card header li {
+  display: inline-block;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: .9rem;
+  color: #333;
+}
+
+.card header li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card header li:hover {
+  color: #FFA300;
+}
+
+@media (min-width: 601px) {
+  .card header .nav {
+    display: block;
+  }
+}
+
+@media (max-width: 740px) {
+  .card header li {
+    color: #FFA300;
+  }
+
+  .card header li:hover {
+    color: #FFBD29;
+  }
+}
+
+@media (max-width: 600px) {
+  .card header {
+    display: block;
+    position: relative;
+  }
+
+  .card header .logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 30%;
+    transform: translateX(-50%);
+  }
+
+  .card header .nav-toggle {
+    position: absolute;
+    display: block;
+    z-index: 1000;
+  }
+
+  .card header .nav-toggle.active {
+    color: black;
+  }
+
+  .card header .nav-toggle.active:hover {
+    color: #333;
+  }
+
+  .card header li a {
+    display: block;
+
+    font-size: 2rem;
+    font-weight: 400;
+
+    margin: 1rem;
+  }
+
+  .card header .nav li {
+    color: #333;
+    display: block;
+    padding: 1rem;
+  }
+
+  .card header .nav li:hover {
+    color: black;
+  }
+
+  .card header .nav {
+    display: none;
+    /*top: 4rem;*/
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .card header .nav ul {
+    height: auto;
+  }
+}
+
+@media (max-width: 330px) {
+  .card header .nav-toggle.active {
+    top: 15% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .card header .nav {
+    top: 30% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+/* main */
+
+.card main {
+  margin-top: 3rem;
+  width: 45%;
+}
+
+.card main h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.card main h2 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.card main .title {
+  margin-bottom: 2rem;
+}
+
+.card main .p-left {
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 740px) {
+  .card main {
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .card main .p-left {
+    width: 60%;
+    margin: 0 auto 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card main {
+    margin-top: 6rem;
+  }
+}
+
+.card main p {
+  font-weight: 300;
+  color: #565656;
+}
+
+.card main .btn {
+  display: inline-block;
+  margin-bottom: 5rem;
+}
