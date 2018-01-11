@@ -64,7 +64,29 @@ const mq = window.matchMedia( "(min-width: 601px)" );
 window.addEventListener("resize", function() {
   if (mq.matches) {
     nav[0].style.display = "block";
+
+    header[0].style.position = "relative";
+
+    container[0].style.position = "relative";
+    container[0].style.overflow = "initial";
+    container[0].classList.remove("container-clicked");
+
+    card[0].style.borderColor = "1px solid rgba(0,0,0,0.1)";
+    card[0].style.backgroundColor = "rgba(255,255,255,0.2)";
+    card[0].style.boxShadow = "0 0 2rem .5rem rgba(0,0,0,0.2)";
+
+    logo[0].style.display = "block";
+    main[0].style.display = "block";
+
+    active = false;
   } else {
-    nav[0].style.display = "none";
+    if (!active) {
+
+      navToggle[0].innerHTML = "Menu";
+      navToggle[0].style.top = "2rem";
+      navToggle[0].style.textTransform = "none";
+      navToggle[0].classList.remove("active");
+      nav[0].style.display = "none";
+    }
   }
 });
