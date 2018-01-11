@@ -1,5 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+var header = document.getElementsByTagName("header");
+var main = document.getElementsByTagName("main");
 
+var container = document.getElementsByClassName("container");
+var card = document.getElementsByClassName("card");
+var logo = document.getElementsByClassName("logo");
+var nav = document.getElementsByClassName("nav");
+
+var navToggle = document.getElementsByClassName("nav-toggle");
+
+var active = false;
+
+document.addEventListener('DOMContentLoaded', function() {
   navToggle[0].addEventListener("click", function() {
     if (!active) {
       this.innerHTML = "Home";
@@ -47,4 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     active = !active;
   });
 
+});
+
+const mq = window.matchMedia( "(min-width: 601px)" );
+window.addEventListener("resize", function() {
+  if (mq.matches) {
+    nav[0].style.display = "block";
+  } else {
+    nav[0].style.display = "none";
+  }
 });
